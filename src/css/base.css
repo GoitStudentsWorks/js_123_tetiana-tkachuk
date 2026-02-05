@@ -1,17 +1,46 @@
+/* #region fonts */
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/ibm-plex-sans-v23-latin-regular.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/ibm-plex-sans-v23-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/ibm-plex-sans-v23-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/epilogue-v20-latin-700.woff2') format('woff2');
+}
+
+/* #endregion fonts */
+
 :root {
-  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Open Sans',
-    'Helvetica Neue',
-    sans-serif;
+  --font:
+    IBM Plex Sans, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-heading:
+    Epilogue, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
@@ -27,6 +56,7 @@
 }
 
 body {
+  font-family: var(--font);
   min-width: 100vw;
   min-height: 100vh;
 }
