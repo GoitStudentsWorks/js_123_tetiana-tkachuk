@@ -1,7 +1,3 @@
 .header {
-  padding: 0;
-}
-.nav {
-  display: flex;
-  justify-content: space-between;
+  background-color: slategrey;
 }
