@@ -1,3 +1,87 @@
-.feedback {
+/* .feedback {
   background-color: rgb(237, 154, 191);
+} */
+
+/* ================================================================= */
+/* Для приховування блока використовується патерн – visually-hidden: */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* ================================================================== */
+
+.swiper {
+  width: 100%;
+  height: 200px;
+}
+
+/* .swiper::part(button-prev),
+.swiper::part(button-next) {
+  width: 50px;
+  height: 50px;
+  display: none;
+  color: red;
+} */
+
+  .swiper-button-prev,
+  .swiper-button-next  {
+    color: chartreuse;
+  }
+
+/* Styles for Tablet devices */
+/* @media screen and (min-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next  {
+    display: inline-block;
+  }
+} */
+/* Styles for Desktop devices */
+/* @media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 64px;
+  }
+} */
+
+/* .swiper-slide {} */
+
+.feedback-block {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: start;
+}
+
+.feedback-rating {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.feedback-descr {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.feedback-name {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 18;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
