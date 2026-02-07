@@ -1,7 +1,34 @@
+// Імпорт функції - отримання відгуків з БД
+import { getFeedbacks } from './api';
 
+// Імпорт функціі - створення розмітки для відгуків
+import {renderFeedbacks} from './render-function';
+
+// Імпорт бібліотеки створення зірочок
 import Raty from "raty-js";
 import 'raty-js/src/raty.css';
 
+// Імпорт бібліотеки Swiper with all modules installed (bundle)
+import Swiper from 'swiper/bundle';
+// import styles bundle
+import 'swiper/css/bundle';
+
+async function init() {
+  const feedbacksObject = await getFeedbacks();
+  const feedbacksArray = feedbacksObject.data;
+
+  renderFeedbacks(feedbacksArray);
+}
+
+init();
+
+// Створення основної розмітки відгуків
+renderFeedbacks(feedbacksArray);
+
+
+// Створення зірочок
+// =============================================================
+// Опції для бібліотеки створення зірочок
 const ratyOption = {
   starOn: './img/feedback-img/star-on.png',
   starOff: './img/feedback-img/star-off.png',
@@ -11,36 +38,32 @@ const ratyOption = {
   // score:3.59,
 }
 
-// Створення
-const raty1 = new Raty(document.querySelector('[data-raty="1"]'), {...ratyOption, score:1.4} );
-const raty2 = new Raty(document.querySelector('[data-raty="2"]'), {...ratyOption, score:2.1} );
-const raty3 = new Raty(document.querySelector('[data-raty="3"]'), {...ratyOption, score:2.9} );
+// Всі DOM-елементи
+const feedbacksAll = Array.from(document.querySelectorAll('[data-raty]'));
 
-// Ініціалізація 
-raty1.init();
-raty2.init();
-raty3.init();
-
-// Встановлення рівня
-// raty.score(3);
-
-
+// Перебираємо масив елементів фідбеків
+feedbacksAll.map(feedback => {
+  // Отримуємо з data-атрибута елемента числове значення рейтингу
+  const feedbackScore = Number(feedback.dataset.score);
+  // Створення для кожного відгуку піделементу - зірочки
+  const raty = new Raty(feedback, {...ratyOption, score:feedbackScore} );
+  // Ініціалізація зірочки для кожного елементу
+  raty.init();
+});
 // =============================================================
-// import Swiper bundle with all modules installed
-import Swiper from 'swiper/bundle';
 
-// import styles bundle
-import 'swiper/css/bundle';
 
+// Створення Слайдеру відгуків
+// =============================================================
 // init Swiper:
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
+  // Optional parameters :
   // Орієнтація
   direction: 'horizontal',
   // Прокрутка слайдів по кругу
   loop: false,
 
-    // Navigation arrows
+  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -56,4 +79,4 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 });
-
+// =============================================================
