@@ -1,6 +1,19 @@
-<section class="section artists">
+<section class="section artists" id="artists">
   <div class="container">
-    <h2>Artists</h2>
-    <button class = 'tmp-open-btn'>Open</button>
+    <h2 class="artists__label">Artists</h2>
+    <p class="artists__title">Explore Your New Favorite Artists</p>
+
+    <ul class="artists__list js-artists-list" aria-live="polite"></ul>
+
+    <button type="button" class="tmp-open-btn" hidden aria-hidden="true"></button>
+
+    <div class="artists__actions">
+      <button class="btn artists__load-more js-artists-load" type="button">
+        Load More
+        <svg class="artists__load-icon" width="24" height="24" aria-hidden="true">
+          <use href="../img/sprite.svg#icon-down-arrow-alt"></use>
+        </svg>
+      </button>
+    </div>
   </div>
 </section>

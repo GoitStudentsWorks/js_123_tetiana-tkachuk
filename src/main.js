@@ -1,5 +1,3 @@
+import './js/artists';
+import './js/artist-modal';
 import './js/feedback';
-
-import './js/artist-modal.js';
-
-handleOpenModal();
