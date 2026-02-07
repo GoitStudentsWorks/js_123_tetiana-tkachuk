@@ -13,10 +13,14 @@ import Swiper from 'swiper/bundle';
 // import styles bundle
 import 'swiper/css/bundle';
 
-// Отримання відгуків - об'єкт
-const feedbacksObject = await getFeedbacks();
-// Отримання відгуків - масив
-const feedbacksArray = feedbacksObject.data;
+async function init() {
+  const feedbacksObject = await getFeedbacks();
+  const feedbacksArray = feedbacksObject.data;
+
+  renderFeedbacks(feedbacksArray);
+}
+
+init();
 
 // Створення основної розмітки відгуків
 renderFeedbacks(feedbacksArray);
