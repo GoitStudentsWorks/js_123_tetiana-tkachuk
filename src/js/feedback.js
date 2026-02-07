@@ -2,81 +2,31 @@
 import { getFeedbacks } from './api';
 
 // Імпорт функціі - створення розмітки для відгуків
-import {renderFeedbacks} from './render-function';
+import {renderFeedbacks} from './feedback-render';
 
-// Імпорт бібліотеки створення зірочок
-import Raty from "raty-js";
-import 'raty-js/src/raty.css';
+// Імпорт функцій - створення зірочок та сдайдеру для відгуків
+import {createLeverStar, createFeedbaсksSlider } from './feedback-helpers';
 
-// Імпорт бібліотеки Swiper with all modules installed (bundle)
-import Swiper from 'swiper/bundle';
-// import styles bundle
-import 'swiper/css/bundle';
+createFeedbacksSlider();
 
-async function init() {
-  const feedbacksObject = await getFeedbacks();
-  const feedbacksArray = feedbacksObject.data;
+export default async function createFeedbacksSlider() {
+  
+  try {
+    // Функція - отримання відгуків з БД
+    const feedbacksObject = await getFeedbacks();
+    const feedbacksArray = feedbacksObject.data;
+    // Створення основної розмітки відгуків з масиву
+    renderFeedbacks(feedbacksArray);
 
-  renderFeedbacks(feedbacksArray);
+  } catch (error) {
+    console.log(`Error create feedbacks list`,error);
+    return;
+  };
+
+  // Функція - Створення зірочок для відгуків
+  createLeverStar();
+
+  // Функція - створення Слайдеру відгуків
+  createFeedbaсksSlider();
+
 }
-
-init();
-
-// Створення основної розмітки відгуків
-renderFeedbacks(feedbacksArray);
-
-
-// Створення зірочок
-// =============================================================
-// Опції для бібліотеки створення зірочок
-const ratyOption = {
-  starOn: './img/feedback-img/star-on.png',
-  starOff: './img/feedback-img/star-off.png',
-  space: false,
-  readOnly: true,
-  halfShow: false,
-  // score:3.59,
-}
-
-// Всі DOM-елементи
-const feedbacksAll = Array.from(document.querySelectorAll('[data-raty]'));
-
-// Перебираємо масив елементів фідбеків
-feedbacksAll.map(feedback => {
-  // Отримуємо з data-атрибута елемента числове значення рейтингу
-  const feedbackScore = Number(feedback.dataset.score);
-  // Створення для кожного відгуку піделементу - зірочки
-  const raty = new Raty(feedback, {...ratyOption, score:feedbackScore} );
-  // Ініціалізація зірочки для кожного елементу
-  raty.init();
-});
-// =============================================================
-
-
-// Створення Слайдеру відгуків
-// =============================================================
-// init Swiper:
-const swiper = new Swiper('.swiper', {
-  // Optional parameters :
-  // Орієнтація
-  direction: 'horizontal',
-  // Прокрутка слайдів по кругу
-  loop: false,
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-// =============================================================
