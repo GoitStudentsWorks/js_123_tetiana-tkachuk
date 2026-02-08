@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(46, 47, 66, 0.4);
+  background-color: rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
   bottom: 64px;
   border-radius: 16px;
   padding: 64px;
-  background: var(--color-scheme-1-background);
+  background-color: #060307;
   overflow-y: auto;
 }
 
@@ -44,25 +44,23 @@
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  background: darkslategrey;
+  background-color: darkslategrey;
   border-radius: 16px;
 }
 
-
-
-.modal-bio.is-open{
+.modal-bio.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-.artists-modal-close-btn{
+.artists-modal-close-btn {
   position: absolute;
   width: 32px;
   height: 32px;
   top: 16px;
   right: 16px;
-  background: var(--color-scheme-1-background);
+  background-color: #060307;
   border: none;
 }
 
@@ -73,28 +71,21 @@
   height: 16px;
   margin-left: auto;
   display: block;
-  background: darkslategrey;
+  background-color: darkslategrey;
   border: none;
 }
 
-
-
-.artists-modal-close-icon, .artists-modal-bio-close-icon{
-  fill: var(--color-white)
+.artists-modal-close-icon,
+.artists-modal-bio-close-icon {
+  fill: #ffffff;
 }
 
-
-.artist-name-title{
-  font-family: var(--second-family);
-  font-weight: 700;
+.artist-name-title {
   font-size: 32px;
   line-height: 130%;
-  letter-spacing: -0.01em;
   text-align: center;
-  color: var(--color-scheme-1-text);
   margin-bottom: 45px;
 }
-
 
 .artist-short-info-grid-wrapper {
   display: grid;
@@ -106,25 +97,15 @@
   grid-template-columns: 147px 1fr;
 }
 
-
-.short-info-small-header{
-  font-family: var(--font-family);
+.short-info-small-header {
+  font-family: var(--font);
   font-weight: 600;
   font-size: 18px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
+  letter-spacing: normal;
 }
 
-.short-info-small-text{
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
-}
-
-.artist-bio{
-  margin-bottom: 5px;
+.artist-bio {
+  margin-bottom: 24px;
 }
 
 .artist-info {
@@ -132,18 +113,6 @@
   gap: 16px;
   align-items: flex-start;
 }
-
-.more-bio-btn{
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  background-color:  var(--color-scheme-1-text);
-  color: var(--color-scheme-1-background);
-  margin-bottom: 20px;
-  border: none;
-  align-items: center;
-}
-
 
 .artist-img {
   width: 576px;
@@ -157,54 +126,37 @@
   min-width: 0;
 }
 
-.artist-short-info-genres-list{
+.artist-short-info-genres-list {
   display: flex;
   gap: 16px;
   align-items: flex-start;
-
 }
 
-.artist-albums-header{
-  font-family: var(--second-family);
-  font-weight: 700;
+.artist-short-info-genre-btn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff;
+}
+
+.artist-albums-header {
   font-size: 24px;
-  line-height: 130%;
-  letter-spacing: -0.01em;
-  color: var(--color-scheme-1-text);
+  line-height: 1.3;
   margin-bottom: 16px;
   margin-top: 48px;
 }
 
-
-
-.artist-short-info-genre-btn{
-  border: 1px solid var(--opacity-white-20);
-  border-radius: 6px;
-  padding: 4px 10px;
-  background: var(--opacity-transparent);
-  color: var(--color-scheme-1-text);
-}
-
-.modal-bio-text{
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
-}
-
-
-
-.artist-table-header{
-  font-family: var(--font-family);
+.artist-table-header {
+  font-family: var(--font);
   font-weight: 600;
   font-size: 16px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
+  line-height: 1.5;
   margin-bottom: 12px;
 }
-
-
 
 .artist-song-table {
   border-radius: 16px;
@@ -223,9 +175,8 @@ table {
 }
 
 thead th {
-  font-weight: 400;
-  font-size: 14px;
-  color: grey;
+  font-weight: 600;
+  font-size: 8px;
   text-align: left;
   padding: 4px 12px;
 }
@@ -262,21 +213,8 @@ tbody tr td:last-child {
   border-radius: 0 8px 8px 0;
 }
 
-
-thead th {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 8px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
-}
-
 tbody td {
-  font-family: var(--font-family);
-  font-weight: 400;
   font-size: 12px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
 }
 
 .artist-albums-wrapper {
