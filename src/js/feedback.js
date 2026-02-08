@@ -5,10 +5,22 @@ import { getFeedbacks } from './api';
 import {renderFeedbacks} from './feedback-render';
 
 // Імпорт функцій - створення зірочок та сдайдеру для відгуків
-import {createLeverStar, createFeedbaсksSlider } from './feedback-helpers';
+import {createLeverStar, createFeedbaсksSlider, setSliderNavigation } from './feedback-helpers';
 
+import { showToast } from "./izitoast";
+
+// Запуск функції створення слайдеру
 createFeedbacksSlider();
 
+// ===========================================================================
+// Слухач події на зміну ширини екрана - для визначення кнопок навігації слайдера
+// ПРИМІТКА - Вимкнений, бо задіяні Responsive breakpoints Navigation Swiper
+// ===========================================================================
+// window.addEventListener('resize', setSliderNavigation);
+
+// ===========================================================================
+// Функція створення слайдеру
+// ===========================================================================
 export default async function createFeedbacksSlider() {
   
   try {
@@ -19,7 +31,8 @@ export default async function createFeedbacksSlider() {
     renderFeedbacks(feedbacksArray);
 
   } catch (error) {
-    console.log(`Error create feedbacks list`,error);
+    // Повідомлення про помилку
+    showToast(`Error create feedbacks list`, 'error' );
     return;
   };
 
@@ -29,4 +42,9 @@ export default async function createFeedbacksSlider() {
   // Функція - створення Слайдеру відгуків
   createFeedbaсksSlider();
 
+  // Функція - Перевірка розміру екрана та визначення кнопок навігації слайдера
+  // ПРИМІТКА - Вимкнена, бо задіяні Responsive breakpoints Navigation Swiper
+  // setSliderNavigation();
+
 }
+
