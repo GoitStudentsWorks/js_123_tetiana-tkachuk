@@ -60,7 +60,9 @@ export function renderArtistInfo(data, modalClass) {
     <div class="artist-info-wrapper">
       <h1 class="artist-name-title">${data.strArtist}</h1>
       <div class="artist-info">
-        <img class="artist-img" src="${data.strArtistThumb}" alt="${data.strArtist} artist photo">
+        <div class = "artist-img-wrapper">
+          <img class="artist-img" src="${data.strArtistThumb}" alt="${data.strArtist} artist photo">
+        </div>
         <div class="artist-short-info">
           <div class="artist-short-info-grid-wrapper">
             <div class="artist-short-info-years">
@@ -82,11 +84,11 @@ export function renderArtistInfo(data, modalClass) {
           </div>
           <div class="artist-bio">
             <h3 class="short-info-small-header">Biography</h3>
-            <p class="short-info-small-text">${bio}</p>
+            <div class = "short-info-small-text-wrapper">
+              <p class="short-info-small-text">${data.strBiographyEN}</p>
+            </div>
           </div>
-          <div class="more-bio">
-            <button class="more-bio-btn">+</button>
-          </div>
+          
           <div class="artist-short-info-genres">
             <ul class="artist-short-info-genres-list">${genresInfo}</ul>
           </div>
@@ -96,13 +98,6 @@ export function renderArtistInfo(data, modalClass) {
         <h2 class="artist-albums-header">Albums</h2>
         ${renderedTables}
       </div>
-      <div class="modal-bio">
-        <button class="artists-modal-bio-close-btn">
-          <svg class="artists-modal-bio-close-icon" width="14" height="14">
-            <use href="../img/sprite.svg#icon-close"></use>
-          </svg>
-        </button>
-        <p class="modal-bio-text">${data.strBiographyEN}</p>
-      </div>
+      
     </div>`);
 }
