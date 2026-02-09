@@ -2,6 +2,7 @@ import { getArtists } from './api.js';
 import { renderArtistInfo } from './artist-modal-render.js';
 import { attachModalListeners } from './artist-modal.js';
 import { initLoader, showLoader, hideLoader } from './loader.js';
+import { ARTISTS_PER_PAGE } from './constant.js';
 
 const refs = {
   list: document.querySelector('.js-artists-list'),
@@ -21,7 +22,7 @@ if (refs.list && refs.loadMoreBtn) {
 
 function initArtists() {
   refs.list.innerHTML = '';
-  refs.loadMoreBtn.hidden = false;
+  refs.loadMoreBtn.hidden = true;
   refs.loadMoreBtn.disabled = false;
 
   refs.loadMoreBtn.addEventListener('click', onLoadMore);
@@ -42,6 +43,7 @@ async function loadArtists(reset) {
 
   if (reset) page = 1;
 
+  refs.loadMoreBtn.hidden = true;
   refs.loadMoreBtn.disabled = true;
   refs.loadMoreBtn.setAttribute('aria-busy', 'true');
 
@@ -58,11 +60,8 @@ async function loadArtists(reset) {
       artists.map(createArtistCard).join('')
     );
 
-    if (artists.length < 8) {
-      refs.loadMoreBtn.hidden = true;
-    } else {
-      refs.loadMoreBtn.hidden = false;
-    }
+    const hasMore = getHasMoreArtists(data, page, ARTISTS_PER_PAGE, artists.length);
+    refs.loadMoreBtn.hidden = !hasMore;
   } catch (error) {
     console.log(error);
   } finally {
@@ -71,6 +70,32 @@ async function loadArtists(reset) {
     refs.loadMoreBtn.removeAttribute('aria-busy');
     isLoading = false;
   }
+}
+
+function getHasMoreArtists(data, currentPage, pageSize, currentCount) {
+  if (!data) return false;
+
+  const pagination = data.pagination || data.meta || data.pageInfo;
+  const totalPages =
+    pagination?.totalPages ?? data.totalPages ?? data.pages ?? data.total_pages;
+  if (Number.isFinite(totalPages)) return currentPage < totalPages;
+
+  const hasNextPage = pagination?.hasNextPage ?? data.hasNextPage;
+  if (typeof hasNextPage === 'boolean') return hasNextPage;
+
+  const nextPage = pagination?.nextPage ?? data.nextPage;
+  if (Number.isFinite(nextPage)) return nextPage > currentPage;
+
+  const total =
+    pagination?.total ??
+    pagination?.totalItems ??
+    data.total ??
+    data.totalItems ??
+    data.totalCount ??
+    data.totalArtists;
+  if (Number.isFinite(total)) return currentPage * pageSize < total;
+
+  return currentCount === pageSize;
 }
 
 function createArtistCard(artist) {
@@ -149,7 +174,6 @@ async function openArtistModal(artistId) {
     hideLoader(loaderOverlay);
   }
 }
-
 
 
 
