@@ -9,14 +9,17 @@ import 'swiper/css/bundle';
 // import 'swiper/element/css/navigation';
 // import 'swiper/element/css/pagination';
 
+import starOn from '../img/feedback-img/star-on.png';
+import starOff from '../img/feedback-img/star-off.png';
+
 // =============================================================
 // Функція - Створення зірочок для відгуків
 // =============================================================
 export function createLeverStar() {
   // Опції для бібліотеки створення зірочок
   const ratyOption = {
-    starOn: '/img/feedback-img/star-on.png',
-    starOff: '/img/feedback-img/star-off.png',
+    starOn,
+    starOff,
     space: false,
     readOnly: true,
     halfShow: false,
@@ -51,11 +54,11 @@ export function createFeedbaсksSlider() {
     // Підстройка висоти "slider wrapper" під висоту активного слайду
     autoHeight: false,
 
-    // Transition effect - ефекти переходу. 
+    // Transition effect - ефекти переходу.
     // Can be 'slide', 'fade', 'cube', 'coverflow', 'flip', 'creative' or 'cards'
     effect: 'slide',
 
-    // Swiper height (in px). 
+    // Swiper height (in px).
     // height: null,
 
     // Pagination Parameters
@@ -87,13 +90,12 @@ export function createFeedbaсksSlider() {
           enabled: true,
         },
       },
-    }
+    },
 
     // Іf we need scrollbar
     // scrollbar: {
     //   el: '.swiper-scrollbar',
     // },
-
   });
 }
 
