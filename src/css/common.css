@@ -10,16 +10,16 @@
 
 .btn {
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   border: none;
   border-radius: 12px;
   box-shadow:
-    0 1px 2px 0 rgba(6, 3, 7, 0.05),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px rgba(6, 3, 7, 0.15),
-    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-  background: #764191;
+    0 1px 2px 0 var(--color-bg-05),
+    inset 0 -2px 1px 0 var(--color-black-20),
+    inset 0 0 0 1px var(--color-bg-15),
+    inset 0 2px 1px 0 var(--color-white-25),
+    inset 0 32px 24px 0 var(--color-white-05);
+  background: var(--color-accent);
   transition:
     opacity var(--transition),
     box-shadow var(--transition);
@@ -31,7 +31,7 @@
   }
 
   &:active {
-    box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05);
+    box-shadow: 0 1px 2px 0 var(--color-bg-05);
   }
 
   &:disabled {
@@ -42,7 +42,7 @@
 .loader {
   width: 48px;
   height: 48px;
-  border: 3px solid #fff;
+  border: 3px solid var(--color-white);
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -61,19 +61,19 @@
   height: 40px;
   border-radius: 50%;
   border: 3px solid;
-  border-color: #764191 transparent;
+  border-color: var(--color-accent) transparent;
 }
 @media screen and (min-width: 768px) {
   .loader {
     width: 96px;
     height: 96px;
-    border: 6px solid #fff;
+    border: 6px solid var(--color-white);
   }
   .loader::after {
     width: 80px;
     height: 80px;
     border: 6px solid;
-    border-color: #764191 transparent;
+    border-color: var(--color-accent) transparent;
   }
 }
 
@@ -82,13 +82,13 @@
   .loader {
     width: 144px;
     height: 144px;
-    border: 9px solid #fff;
+    border: 9px solid var(--color-white);
   }
   .loader::after {
     width: 120px;
     height: 120px;
     border: 9px solid;
-    border-color: #764191 transparent;
+    border-color: var(--color-accent) transparent;
   }
 }
 

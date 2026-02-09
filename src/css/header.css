@@ -1,5 +1,5 @@
 .header {
-  background-color: #060307;
+  background-color: var(--color-bg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 64px;
@@ -22,12 +22,12 @@
   width: 100%;
 }
 .nav-logo-icon {
-  fill: #fff;
+  fill: var(--color-white);
   width: 107px;
   height: 30px;
 }
 .nav-burger-icon, .modal-close-icon {
-  fill: #fff;
+  fill: var(--color-white);
   width: 24px;
   height: 24px;
 }
@@ -56,7 +56,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #060307;
+  background-color: var(--color-bg);
   transition: var(--transition);
   z-index: 9999;
   opacity: 0;
@@ -88,7 +88,7 @@
   gap: 32px;
 }
 .modal-nav-item {
-  color: #fff;
+  color: var(--color-white);
   font-size: 26px;
   font-weight: 500;
 }
