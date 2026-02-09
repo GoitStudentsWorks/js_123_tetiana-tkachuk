@@ -1,5 +1,3 @@
-
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -60,17 +58,23 @@
 .artists-modal-bio-close-btn {
   position: sticky;
   top: 0px;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   margin-left: auto;
   display: block;
   background-color: darkslategrey;
   border: none;
 }
 
-.artists-modal-close-icon,
-.artists-modal-bio-close-icon {
+.artists-modal-close-icon {
+  width: 32px;
+  height: 32px;
   fill: #ffffff;
+  transition: fill var(--transition);
+}
+
+.artists-modal-close-icon:hover {
+  opacity: 0.6;
 }
 
 .artist-name-title {
@@ -79,8 +83,6 @@
   text-align: center;
   margin-bottom: 45px;
 }
-
-
 
 .artist-short-info-grid-wrapper {
   display: grid;
@@ -108,19 +110,16 @@
   align-items: flex-start;
 }
 
-
-
 .artist-short-info {
   flex: 1;
   min-width: 0;
 }
 
-.short-info-small-text-wrapper{
+.short-info-small-text-wrapper {
   max-height: 135px;
   overflow-y: auto;
   background-color: rgba(255, 255, 255, 0);
 }
-
 
 .artist-short-info-genres-list {
   display: flex;
@@ -230,30 +229,35 @@ tbody td {
   margin-top: 0;
 }
 
-
+.artist-modal-youtube-icon {
+  fill: #ffffff;
+  transition: opacity var(--transition);
+}
 
 @media screen and (min-width: 768px) {
-
   .modal {
     padding-left: 8px;
     padding-right: 8px;
     left: 32px;
     right: 32px;
   }
+  .artists-modal-close-icon:hover {
+    opacity: 0.6;
+  }
 
-  .artist-img-wrapper{
+  .artist-img-wrapper {
     width: 654px;
     height: 402px;
   }
 
   .artist-short-info-grid-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 48px;
-  row-gap: 16px;
-  margin-bottom: 24px;
-  grid-template-rows: 54px 54px;
-  grid-template-columns: 147px 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 16px;
+    margin-bottom: 24px;
+    grid-template-rows: 54px 54px;
+    grid-template-columns: 147px 1fr;
   }
   .artist-albums-wrapper {
     display: grid;
@@ -263,10 +267,13 @@ tbody td {
     grid-auto-rows: 372px;
   }
 
-  .artist-song-table:nth-of-type(-n+2) {
+  .artist-song-table:nth-of-type(-n + 2) {
     margin-top: 0;
   }
-  
+
+  .artist-modal-youtube-icon:hover {
+    opacity: 0.6;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -277,7 +284,7 @@ tbody td {
     right: 64px;
   }
 
-  .artist-img-wrapper{
+  .artist-img-wrapper {
     width: 576px;
     height: 354px;
   }
@@ -295,7 +302,7 @@ tbody td {
     grid-template-rows: auto 564px;
     grid-auto-rows: 372px;
   }
-  .artist-song-table:nth-of-type(-n+4) {
+  .artist-song-table:nth-of-type(-n + 4) {
     margin-top: 0;
   }
 }

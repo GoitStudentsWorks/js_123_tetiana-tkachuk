@@ -2,37 +2,50 @@
 // These are the render functions for artist-modal.js file
 /////////
 
-
-import { convertMstoMins, renderActiveYears, renderBiography } from './artist-modal-helpers.js';
+import {
+  convertMstoMins,
+  renderActiveYears,
+  renderBiography,
+} from './artist-modal-helpers.js';
 
 export function renderGenres(data) {
-  return data.genres.map(genre => `
+  return data.genres
+    .map(
+      genre => `
     <li>
       <button class="artist-short-info-genre-btn">${genre}</button>
-    </li>`).join('');
+    </li>`
+    )
+    .join('');
 }
 
 export function renderAlbumsList(data) {
   const albumsList = data.albumsList;
 
-  return albumsList.map((element) => {
-    const rowMarkup = element.tracks.map((track) => {
-      const link = track.movie === null ? '' : `
+  return albumsList
+    .map(element => {
+      const rowMarkup = element.tracks
+        .map(track => {
+          const link =
+            track.movie === null
+              ? ''
+              : `
         <a href="${track.movie}" target="_blank" rel="noopener noreferrer">
-          <svg width="24" height="24" fill="#ffffff">
-            <use href="../img/sprite.svg#icon-youtube"></use>
+          <svg class='artist-modal-youtube-icon' width="24" height="24">
+            <use href="/img/sprite.svg#icon-youtube"></use>
           </svg>
         </a>`;
 
-      return `
+          return `
         <tr>
           <td>${track.strTrack}</td>
           <td>${convertMstoMins(track.intDuration)}</td>
           <td>${link}</td>
         </tr>`;
-    }).join('');
+        })
+        .join('');
 
-    return `
+      return `
       <div class="artist-song-table">
         <h3 class="artist-table-header">${element.strAlbum}</h3>
         <table>
@@ -47,7 +60,8 @@ export function renderAlbumsList(data) {
           <tbody>${rowMarkup}</tbody>
         </table>
       </div>`;
-  }).join('');
+    })
+    .join('');
 }
 
 export function renderArtistInfo(data, modalClass) {
@@ -56,7 +70,9 @@ export function renderArtistInfo(data, modalClass) {
   const genresInfo = renderGenres(data);
   const renderedTables = renderAlbumsList(data);
 
-  modalClass.insertAdjacentHTML('beforeend', `
+  modalClass.insertAdjacentHTML(
+    'beforeend',
+    `
     <div class="artist-info-wrapper">
       <h1 class="artist-name-title">${data.strArtist}</h1>
       <div class="artist-info">
@@ -99,5 +115,6 @@ export function renderArtistInfo(data, modalClass) {
         ${renderedTables}
       </div>
       
-    </div>`);
+    </div>`
+  );
 }
