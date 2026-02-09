@@ -1,7 +1,7 @@
 .about-icon {
   width: 64px;
   height: 64px;
-  fill: #fff;
+  fill: var(--color-white);
   margin-bottom: 20px;
 }
 .about-picture-wrapper {

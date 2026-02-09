@@ -21,7 +21,7 @@
 
 
 .footer-logo-svg {
-  fill: #764191;
+  fill: var(--color-accent);
 }
 
 
@@ -36,7 +36,7 @@
 
 
 .footer-nav-item {
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
@@ -50,17 +50,17 @@
 
 .footer-nav-link:hover,
 .footer-nav-link:focus {
-  color: #764191;
+  color: var(--color-accent);
 }
 
 
 .footer-nav-link:active {
-  color: #fff;
+  color: var(--color-white);
 }
 
 
 .divider {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-white-20);
   width: 100%;
   height: 1px;
   margin-bottom: 24px;
@@ -85,19 +85,19 @@
 
 
 .social-icon {
-  fill: #ffffff;
+  fill: var(--color-white);
   transition: var(--transition);
 }
 
 
 .footer-social-link:hover .social-icon,
 .footer-social-link:focus .social-icon {
-  fill: #55236e;
+  fill: var(--color-accent-dark);
 }
 
 
 .footer-text {
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;

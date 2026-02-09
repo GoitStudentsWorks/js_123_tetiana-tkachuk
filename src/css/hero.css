@@ -4,7 +4,7 @@
 }
 
 .hero-container {
-  background-color: #23132B;
+  background-color: var(--color-hero-base);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -22,8 +22,8 @@
   z-index: 1;
   background: linear-gradient(
     180deg,
-    #060307 0%,
-    rgba(35, 19, 43, 0) 100%)
+    var(--color-bg) 0%,
+    var(--color-hero-base-0) 100%)
   
 }
 
@@ -84,8 +84,8 @@
   height: 106px;
   background: linear-gradient(
     to top,
-    #060307 0%,
-    rgba(35, 19, 43, 0) 100%
+    var(--color-bg) 0%,
+    var(--color-hero-base-0) 100%
   );
 }
 
