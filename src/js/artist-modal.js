@@ -26,9 +26,6 @@ export async function handleOpenModal(artistId) {
   } 
 }
 
-
-
-
 export function handleModalOverlayClick(e) {
   if (e.target === modalOverlay) {
     handleModalClose();
@@ -41,10 +38,19 @@ export function handleEscKeyClick(e) {
   }
 }
 
-modalWindowCloseBtn.addEventListener('click', handleModalClose);
-modalOverlay.addEventListener('click', handleModalOverlayClick);
-document.addEventListener('keydown', handleEscKeyClick);
+export function handleBlurClose (e) {
+  if (!modalOverlay.contains(e.relatedTarget)) {
+    handleModalClose();
+  }
+}
 
+
+export function attachModalListeners() {
+  modalWindowCloseBtn.addEventListener('click', handleModalClose);
+  modalOverlay.addEventListener('click', handleModalOverlayClick);
+  document.addEventListener('keydown', handleEscKeyClick);
+  modalOverlay.addEventListener('blur', handleBlurClose);
+}
 
 export function handleModalClose() {
   modalOverlay.classList.remove('is-open');
@@ -54,6 +60,7 @@ export function handleModalClose() {
   modalWindowCloseBtn.removeEventListener('click', handleModalClose);
   modalOverlay.removeEventListener('click', handleModalOverlayClick);
   document.removeEventListener('keydown', handleEscKeyClick);
+  modalOverlay.removeEventListener('blur', handleBlurClose);
 }
 
 

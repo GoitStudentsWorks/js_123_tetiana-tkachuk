@@ -1,6 +1,6 @@
 import { getArtists } from './api.js';
 import { renderArtistInfo } from './artist-modal-render.js';
-import {handleModalClose, handleEscKeyClick, handleModalOverlayClick} from './artist-modal.js'
+import {handleModalClose, handleEscKeyClick, handleModalOverlayClick, attachModalListeners} from './artist-modal.js'
 import {mountLoader, initLoader, showLoader, hideLoader} from './loader.js'
 const refs = {
   list: document.querySelector('.js-artists-list'),
@@ -128,12 +128,12 @@ async function onArtistClick(e) {
 async function openArtistModal(artistId) {
   showLoader(loaderOverlay)
   refs.modalOverlay.classList.add('is-open');
+  refs.modalOverlay.focus()
   document.body.style.overflow = 'hidden';
 
   document.querySelector('.artist-info-wrapper')?.remove();
-  refs.modalWindowCloseBtn.addEventListener('click', handleModalClose);
-  refs.modalOverlay.addEventListener('click', handleModalOverlayClick);
-  document.addEventListener('keydown', handleEscKeyClick);
+  attachModalListeners();  
+  
 
   const res = await fetch(
     `https://sound-wave.b.goit.study/api/artists/${artistId}/albums`,
