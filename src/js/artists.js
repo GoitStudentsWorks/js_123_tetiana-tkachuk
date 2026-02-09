@@ -92,7 +92,7 @@ function createArtistCard(artist) {
           ${genres.map(g => `<li class="artist-card-tag">${g}</li>`).join('')}
         </ul>
 
-        <div>
+        <div class="artist-desc">
           <h3 class="artist-card-name">${name}</h3>
           <p class="artist-card-text">${description}</p>
         </div>
