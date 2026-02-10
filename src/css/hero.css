@@ -10,7 +10,6 @@
   gap: 20px;
 }
 
-
 .hero::before {
   content: '';
   position: absolute;
@@ -23,8 +22,8 @@
   background: linear-gradient(
     180deg,
     var(--color-bg) 0%,
-    var(--color-hero-base-0) 100%)
-  
+    var(--color-hero-base-0) 100%
+  );
 }
 
 .hero-content {
@@ -64,13 +63,12 @@
   z-index: 1;
   position: relative;
   background-image: image-set(
-  url('../img/hero-img/hero-mob-1x.webp') 1x,
-  url('../img/hero-img/hero-mob-2x.webp') 2x
-);
+    url('../img/hero-img/hero-mob-1x.webp') 1x,
+    url('../img/hero-img/hero-mob-2x.webp') 2x
+  );
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
-
 }
 
 .hero::after {
@@ -89,25 +87,23 @@
   );
 }
 
-
 @media screen and (min-width: 768px) {
-
   .hero::before {
     height: 125px;
   }
-  
+
   .hero::after {
     height: 137px;
   }
 
   .hero-title {
     max-width: 624px;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
   }
 
   .hero-subtitle {
     font-size: 20px;
-    padding-bottom: 32px;
+    margin-bottom: 32px;
   }
 
   .hero-content {
@@ -122,16 +118,15 @@
   }
 
   .hero-bg-image-wrapper {
-  height: 632px;
-  background-image: image-set(
-  url('../img/hero-img/hero-tab-1x.webp') 1x,
-  url('../img/hero-img/hero-tab-2x.webp') 2x
-  );
+    height: 632px;
+    background-image: image-set(
+      url('../img/hero-img/hero-tab-1x.webp') 1x,
+      url('../img/hero-img/hero-tab-2x.webp') 2x
+    );
   }
 }
 
 @media screen and (min-width: 1440px) {
-
   .hero::before {
     height: 80px;
     z-index: 3;
@@ -156,7 +151,7 @@
     justify-content: space-between;
     gap: 31px;
   }
-  
+
   .hero-content {
     width: 50%;
     padding-top: 24px;
@@ -166,11 +161,11 @@
     width: 641px;
     height: 900px;
     background-image: image-set(
-    url('../img/hero-img/hero-desk-1x.webp') 1x,
-    url('../img/hero-img/hero-desk-2x.webp') 2x
+      url('../img/hero-img/hero-desk-1x.webp') 1x,
+      url('../img/hero-img/hero-desk-2x.webp') 2x
     );
 
-  background-size: cover;
-  background-position: center;
+    background-size: cover;
+    background-position: center;
   }
 }
