@@ -1,3 +1,5 @@
+import { handleModalClose } from './artist-modal';
+
 function modalMenuHandler() {
   const openBtn = document.querySelector('.nav-button');
   const closeBtn = document.querySelector('.modal-close-button');
@@ -7,6 +9,7 @@ function modalMenuHandler() {
   modalLinks.forEach(link => {
     link.addEventListener('click', () => {
       modalMenu.classList.remove('modal-open');
+      handleModalClose();
     });
   });
 
