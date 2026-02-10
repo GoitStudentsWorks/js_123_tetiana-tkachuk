@@ -6,7 +6,7 @@
 
 ---
 
-**Artists Hub** is a modern, responsive single-page web application  
+**Artists Hub** is a modern, adaptive single-page web application  
 designed for discovering and exploring music artists.
 
 - Browse a list of artists
@@ -31,7 +31,7 @@ It was created as a **team educational project** to practice:
 ## 🚀 Features
 
 - Artists list display
-- Responsive layout (mobile / tablet / desktop)
+- Adaptive layout (mobile 320px/ tablet 768px/ desktop 1440px)
 - Modular project structure
 - Clean and readable UI
 - GitHub Pages deployment
