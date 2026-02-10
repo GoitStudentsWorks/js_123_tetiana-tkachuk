@@ -1,14 +1,8 @@
-.section.artists {
-  padding-top: 112px;
-  padding: 64px 16px;
-}
-
 .artists-header {
   margin-bottom: 32px;
 }
 
 .artists-subtitle {
-  margin-top: 0;
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 400;
@@ -20,6 +14,7 @@
   font-size: 44px;
   line-height: 1.2;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .artists-list {
@@ -108,7 +103,8 @@
 }
 
 .artists-load-more {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   padding: 10px 24px;
@@ -127,9 +123,21 @@
   .artist-card-image {
     aspect-ratio: 704 / 432.79;
   }
+
+  .artists-load-more {
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .artists-header {
+    margin-bottom: 80px;
+  }
+
+  .artists-subtitle {
+    margin-bottom: 16px;
+  }
+
   .artists-list {
     grid-template-columns: repeat(2, 1fr);
   }
