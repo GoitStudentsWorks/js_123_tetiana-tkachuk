@@ -76,7 +76,7 @@ export function renderArtistInfo(data, modalClass) {
     'beforeend',
     `
     <div class="artist-info-wrapper">
-      <h1 class="artist-name-title">${data.strArtist}</h1>
+      <h2 class="artist-name-title">${data.strArtist}</h2>
       <div class="artist-info">
         <div class = "artist-img-wrapper">
           <img class="artist-img" src="${data.strArtistThumb}" alt="${data.strArtist} artist photo">
