@@ -32,7 +32,7 @@ export function renderAlbumsList(data) {
             track.movie === null
               ? ''
               : `
-        <a href="${track.movie}" target="_blank" rel="noopener noreferrer">
+        <a href="${track.movie}" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
           <svg class='artist-modal-youtube-icon' width="24" height="24">
             <use href="${sprite}#icon-youtube"></use>
           </svg>
