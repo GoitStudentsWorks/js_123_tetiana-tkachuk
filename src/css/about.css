@@ -41,7 +41,7 @@
   .about-container {
     display: flex;
     align-items: center;
-    gap: 64px;
+    gap: 32px;
   }
 
   .about-picture-wrapper {
