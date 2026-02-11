@@ -64,6 +64,8 @@
   --color-bg-15: rgba(6, 3, 7, 0.15);
   --color-hero-base-0: rgba(35, 19, 43, 0);
 
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   font-size: 18px;
   line-height: 1.5;
   font-weight: 400;
@@ -79,7 +81,24 @@
 
   scroll-behavior: smooth;
 
-  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #fcfcfd;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #55236e;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6f3b8c;
+  }
 }
 
 body {
