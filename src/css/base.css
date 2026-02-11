@@ -51,6 +51,8 @@
   --color-accent: #764191;
   --color-accent-dark: #55236e;
 
+  --color-black-overlay: rgba(59, 46, 66, 0.55);
+
   --color-black-20: rgba(0, 0, 0, 0.2);
   --color-black-25: rgba(0, 0, 0, 0.25);
   --color-white-0: rgba(255, 255, 255, 0);
