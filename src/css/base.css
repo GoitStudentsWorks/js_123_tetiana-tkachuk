@@ -87,7 +87,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #fcfcfd;
+    background: var(--color-hero-base);
     border-radius: 8px;
   }
 
