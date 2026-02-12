@@ -11,11 +11,18 @@ function modalMenuHandler() {
   });
 
   openBtn.addEventListener('click', () => {
-    modalMenu.classList.add('modal-open');
+    modalMenu.classList.remove('slideOutUp');
     document.body.style.overflow = 'hidden';
+    modalMenu.classList.add('modal-open', 'animate', 'slideInDown');
   });
+
   closeBtn.addEventListener('click', () => {
-    modalMenu.classList.remove('modal-open');
+    modalMenu.classList.remove('slideInDown');
+    modalMenu.classList.add('slideOutUp');
+    setTimeout(() => {
+      modalMenu.classList.remove('modal-open');
+    }, 1000);
+
     document.body.style.overflow = 'auto';
   });
 }
