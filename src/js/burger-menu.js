@@ -12,15 +12,16 @@ function modalMenuHandler() {
 
   openBtn.addEventListener('click', () => {
     modalMenu.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
   });
   closeBtn.addEventListener('click', () => {
     modalMenu.classList.remove('modal-open');
+    document.body.style.overflow = 'auto';
   });
 }
 
 modalMenuHandler();
 
-// const header = document.querySelector('.header');
 const { height: pageHeaderHeight } = document
   .querySelector('.header')
   .getBoundingClientRect();
