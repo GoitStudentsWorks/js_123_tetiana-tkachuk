@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/js_123_tetiana-tkachuk/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Artists Hub is a modern single-page app for discovering and exploring music artists."
+    />
+    <title>ArtistsHub</title>
+    <script type="module" crossorigin src="/js_123_tetiana-tkachuk/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/js_123_tetiana-tkachuk/assets/vendor-B--kmjCI.js">
+    <link rel="stylesheet" crossorigin href="/js_123_tetiana-tkachuk/assets/vendor-B3XaSC1o.css">
+    <link rel="stylesheet" crossorigin href="/js_123_tetiana-tkachuk/assets/index-DBzpr0rS.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header-container">
+    <nav class="nav">
+      <a class="nav-logo" href="./index.html" aria-label="Go to homepage">
+        <svg class="nav-logo-icon" aria-hidden="true">
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#artists" class="nav-link">Artists</a>
+        </li>
+        <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+        <li class="nav-item">
+          <a href="#reviews" class="nav-link">Reviews</a>
+        </li>
+      </ul>
+      <button type="button" class="nav-button">
+        <svg class="nav-burger-icon" width="48" height="48">
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-menu"></use>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- modal menu -->
+
+<div class="modal-menu">
+  <div class="modal-top">
+    <a href="./index.html" class="nav-logo" aria-label="Go to homepage">
+      <svg class="nav-logo-icon" aria-hidden="true">
+        <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-logo"></use>
+      </svg>
+    </a>
+    <button type="button" class="modal-close-button" aria-label="Close menu">
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+  <nav class="modal-nav">
+    <ul class="modal-nav-list">
+      <li class="modal-nav-item">
+        <a href="#artists" class="modal-nav-link">Artists</a>
+      </li>
+      <li class="modal-nav-item">
+        <a href="#about" class="modal-nav-link">About Us</a>
+      </li>
+      <li class="modal-nav-item">
+        <a href="#reviews" class="modal-nav-link">Reviews</a>
+      </li>
+    </ul>
+  </nav>
+  <ul class="header-social-list">
+    <li class="header-social-item">
+      <a
+        class="header-social-link"
+        href="https://www.instagram.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        <svg
+          class="header-social-icon"
+          width="40"
+          height="40"
+          aria-hidden="true"
+        >
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-instagram"></use>
+        </svg>
+      </a>
+    </li>
+
+    <li class="header-social-item">
+      <a
+        class="header-social-link"
+        href="https://www.facebook.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="Facebook"
+      >
+        <svg
+          class="header-social-icon"
+          width="40"
+          height="40"
+          aria-hidden="true"
+        >
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-facebook"></use>
+        </svg>
+      </a>
+    </li>
+
+    <li class="header-social-item">
+      <a
+        class="header-social-link"
+        href="https://www.youtube.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="YouTube"
+      >
+        <svg
+          class="header-social-icon"
+          width="40"
+          height="40"
+          aria-hidden="true"
+        >
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-youtube"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+    <main>
+      <section class="hero">
+  <div class="container hero-container">
+    <div class="hero-content">
+       <h1 class="hero-title">Discover Your Next Favorite Artist 
+         <span>Today</span>
+         </h1>
+      <h2 class="hero-subtitle">
+        Dive into a world of music discoveries with ArtistsHub – your personal guide to the boundless universe of sound. Explore, filter, and learn about your favorite artists all in one place.
+      </h2>
+        <a href="#artists" class="btn explore-btn">
+      Explore Artists
+      <svg class="hero-icon" width="24" height="24">
+        <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-right-arrow"></use>
+      </svg>
+      </a>
+    </div>
+    <div class="hero-bg-image-wrapper"></div>
+  </div>
+</section>
+
+      <section class="section artists" id="artists">
+  <div class="container">
+    <div class="artists-header">
+      <h2 class="artists-subtitle">Artists</h2>
+      <p class="artists-title">Explore Your New Favorite Artists</p>
+    </div>
+
+    <ul class="artists-list js-artists-list" aria-live="polite"></ul>
+
+    <div class="artists-actions">
+      <button class="btn artists-load-more js-artists-load" type="button" hidden>
+        Load More
+        <svg
+          class="artists-load-icon"
+          width="24"
+          height="24"
+          aria-hidden="true"
+        >
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-down-arrow-alt"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+      <section class="section" id="about">
+  <div class="container about-container">
+    <div class="about-picture-wrapper">
+      <picture class="about-img">
+        <source
+          srcset="/js_123_tetiana-tkachuk/assets/team-1xdesk-DrpnPtuu.webp 1x, /js_123_tetiana-tkachuk/assets/team-2xdesk-l9o_jHHc.webp 2x"
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="/js_123_tetiana-tkachuk/assets/team-1xmob-B_b7jkrw.webp 1x, /js_123_tetiana-tkachuk/assets/team-2xmob-CQEA18u_.webp 2x"
+          media="(min-width: 768px)"
+        />
+        <source
+          srcset="/js_123_tetiana-tkachuk/assets/team-1xmob-B_b7jkrw.webp 1x, /js_123_tetiana-tkachuk/assets/team-2xmob-CQEA18u_.webp 2x"
+          media="(max-width: 767px)"
+        />
+        <img src="/js_123_tetiana-tkachuk/assets/team-1xmob-B_b7jkrw.webp" alt="Company team" />
+      </picture>
+    </div>
+    <div class="about-content">
+      <div class="about-heading">
+        <svg class="about-icon">
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-logo-icon"></use>
+        </svg>
+        <h2 class="about-title">About ArtistsHub</h2>
+        <p class="about-text">
+          At ArtistsHub, our mission is to connect music lovers with the artists
+          they adore. We strive to create a vibrant community where discovering
+          new music is as enjoyable as listening to it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="section feedback" id="reviews">
+  <div class="container">
+    <h2 class="visually-hidden">Feedbacks our visitors</h2>
+
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+      </div>
+
+      <!-- navigation buttons -->
+      <div class="swiper-button-prev">
+        <svg width="24" height="24" class="swiper-nav-icon">
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-left-arrow-alt"></use>
+        </svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg width="24" height="24" class="swiper-nav-icon">
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-right-arrow-alt"></use>
+        </svg>
+      </div>
+
+      <!-- pagination -->
+      <div class="pagination-wrapper">
+        <div class="swiper-pagination"></div>
+      </div>
+      
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+  <div class="container footer-container">
+    <div class="footer-logo-wrapper">
+      <a href="./index.html" class="footer-logo" aria-label="Go to homepage">
+        <svg class="footer-logo-svg" aria-hidden="true">
+          <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-logo"></use>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <ul class="footer-nav-list">
+        <li class="footer-nav-item">
+          <a href="#artists" class="footer-nav-link">Artists</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="#about" class="footer-nav-link">About us</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="#reviews" class="footer-nav-link">Reviews</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="divider"></div>
+
+    <div class="footer-social-wrapper">
+      <div class="footer-social">
+        <ul class="footer-social-list">
+          <li class="footer-social-item">
+            <a
+              class="footer-social-link"
+              href="https://www.instagram.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                class="social-icon"
+                width="40"
+                height="40"
+                aria-hidden="true"
+              >
+                <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer-social-item">
+            <a
+              class="footer-social-link"
+              href="https://www.facebook.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                class="social-icon"
+                width="40"
+                height="40"
+                aria-hidden="true"
+              >
+                <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer-social-item">
+            <a
+              class="footer-social-link"
+              href="https://www.youtube.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                class="social-icon"
+                width="40"
+                height="40"
+                aria-hidden="true"
+              >
+                <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-text-wrapper">
+        <p class="footer-text">&#169; 2025 ArtistsHub. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <div class="modal-overlay">
+  <div class="modal">
+    <button class="artists-modal-close-btn">
+      <svg class="artists-modal-close-icon">
+        <use href="/js_123_tetiana-tkachuk/assets/sprite-Bwwhuc7H.svg#icon-close-modal"></use>
+      </svg>
+    </button>
+
+    <!-- <div class="artist-info-wrapper">
+      <h2 class = 'artist-name-title'>U2</h2>
+
+
+      <div class="artist-info">
+        <img class = 'artist-img' src="https://ftp.goit.study/img/musicbox/artist/strArtistThumb_qvuxvs1347997318.jpg" alt="sdfsd">
+
+        <div class="artist-short-info">
+          <div class="artist-short-info-grid-wrapper">
+            <div class="artist-short-info-years">
+              <h3 class = 'short-info-small-header short-info-small-header-info-years'>Years active</h3>
+              <p class = 'short-info-small-text short-info-small-text-info-years'>dfwefwe</p>
+            </div>
+            <div class="artist-short-info-sex">
+              <h3 class = 'short-info-small-header short-info-small-header-info-sex'>Sex</h3>
+              <p class = 'short-info-small-text short-info-small-text-info-sex'>ewfw</p>
+            </div>
+            <div class="artist-short-info-members">
+              <h3 class = 'short-info-small-header short-info-small-header-info-members'>Members</h3>
+              <p class = 'short-info-small-text short-info-small-text-info-members'>fwefw</p>
+            </div>
+            <div class="artist-short-info-country">
+              <h3 class = 'short-info-small-header short-info-small-header-info-country'>Country</h3>
+              <p class = 'short-info-small-text short-info-small-text-info-contry'>fwefw</p>
+            </div>
+          </div>
+          <div class="artist-bio">
+            <h3 class = 'short-info-small-header short-info-small-header-biography'>Biography</h3>
+            <p class = 'short-info-small-text short-info-small-text-biography'>Armond Arabshahi, known by his stage name Unlike Pluto, is an American singer, songwriter, music producer, and former DJ. He is mainly known for his song "Everything Black", released under the record label Monstercat in 2017, which he produced with Philadelphia-based vocalist and DJ Mike Taylor.</p>
+          </div>
+
+          <div class="artist-short-info-genres">
+            <ul class="artist-short-info-genres-list">
+              <li >
+                <button class="artist-short-info-genre-btn">
+                  cfdeg
+                </button>
+              </li>
+              <li>
+                <button class="artist-short-info-genre-btn">
+                  dfvdf
+                </button>
+              </li>
+              <li>
+                <button class="artist-short-info-genre-btn">
+                  vefdvd
+                </button>
+              </li>
+              <li>
+                <button class="artist-short-info-genre-btn">
+                  dfvdf
+                </button>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="artist-albums-wrapper">
+        <h2 class = 'artist-albums-header'>Albums</h2>
+      </div>
+    
+    <div class="modal-bio">
+      <button class = 'artists-modal-bio-close-btn'>
+        <svg class="artists-modal-bio-close-icon" width="14" height="14">
+          <use href="../img/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+      <p class = 'modal-bio-text'></p>
+    </div>
+
+
+    
+    </div> -->
+  </div>
+</div>
+
+
+  </body>
+</html>
