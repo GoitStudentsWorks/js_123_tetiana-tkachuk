@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/artistshub-team-project/",
+    "build": "vite build --base=/js_123_tetiana-tkachuk/",
     "preview": "vite preview"
   },
   "devDependencies": {
